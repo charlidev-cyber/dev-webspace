@@ -1,97 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My First Website</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    <title>My First Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            margin: 20px;
-        }
-        header, footer {
-            background-color: #007acc;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            margin: 0 15px;
-            color: #007acc;
-            text-decoration: none;
-        }
-        section {
-            margin: 20px 0;
-        }
-    </style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 0;
+    }
+
+    body > * {
+      position: relative;
+      z-index: 1;
+      color: #fff;
+    }
+
+    header, footer {
+      background-color: rgba(0, 122, 204, 0.9);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 2px black;
+    }
+
+    nav {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: background 0.3s;
+      background-color: rgba(0, 122, 204, 0.6);
+    }
+
+    nav a:hover {
+      background-color: rgba(0, 122, 204, 0.85);
+    }
+
+    section {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 12px;
+      max-width: 800px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+
+    section h2 {
+      color: #00e0ff;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 2px black;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      color: #fff;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    th {
+      background-color: rgba(0, 122, 204, 0.85);
+    }
+
+    ul li {
+      margin-bottom: 5px;
+    }
+
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 10px auto;
+      }
+
+      section {
+        padding: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <h1>Welcome to My Website</h1>
-        <p>A basic website made for BCA 2nd Sem</p>
-    </header>
+  <header>
+    <h1>Welcome to My Website</h1>
+    <p>A stylish website made for BCA 2nd Sem</p>
+  </header>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </nav>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-    <section>
-        <h2>About Me</h2>
-        <p>Hello! My name is DEV, and I am a BCA 2nd Semester student. I am learning HTML.</p>
-        <img src="Dev.jpg" alt="Sample Image" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
-    </section>
+  <section>
+    <h2>About Me</h2>
+    <p>Hello! My name is DEV, and I am a BCA 2nd Semester student. I am learning HTML.</p>
+    <img src="Dev.jpg" alt="My Photo">
+  </section>
 
-    <section>
-        <h2>My Hobbies</h2>
-        <ul>
-            <li>Coding</li>
-            <li>Playing Online Games</li>
-            <li>Watching Movies</li>
-        </ul>
-    </section>
+  <section>
+    <h2>My Hobbies</h2>
+    <ul>
+      <li>Coding</li>
+      <li>Playing Online Games</li>
+      <li>Watching Movies</li>
+    </ul>
+  </section>
 
-    <section>
-        <h2>Subjects This Semester</h2>
-        <table border="1" cellpadding="8">
-            <tr>
-                <th>Subject</th>
-                <th>Code</th>
-            </tr>
-            <tr>
-                <td>Mathematics Foundation To Computer Science</td>
-                <td>CC103</td>
-            </tr>
-            <tr>
-                <td>Data Structures</td>
-                <td>CC104</td>
-            </tr>
-            <tr>
-                <td>Operating System</td>
-                <td>CC105</td>
-            </tr>
-                <tr>
-                    <td>Object Oriented Programming Using Java</td>
-                    <td>SEC102</td>
-                </tr>
-            <tr>
-                <td>Web Teachnology</td>
-                <td>SEC103</td>
-            </tr>
-            <tr>
-                <td>Indian Constitution</td>
-                <td>VAC102</td>
-            </tr>
-        </table>
-    </section>
+  <section>
+    <h2>Subjects This Semester</h2>
+    <table>
+      <tr>
+        <th>Subject</th>
+        <th>Code</th>
+      </tr>
+      <tr>
+        <td>Mathematics Foundation To Computer Science</td>
+        <td>CC103</td>
+      </tr>
+      <tr>
+        <td>Data Structures</td>
+        <td>CC104</td>
+      </tr>
+      <tr>
+        <td>Operating System</td>
+        <td>CC105</td>
+      </tr>
+      <tr>
+        <td>Object Oriented Programming Using Java</td>
+        <td>SEC102</td>
+      </tr>
+      <tr>
+        <td>Web Technology</td>
+        <td>SEC103</td>
+      </tr>
+      <tr>
+        <td>Indian Constitution</td>
+        <td>VAC102</td>
+      </tr>
+    </table>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 DEV | BCA Student</p>
-    </footer>
+  <footer>
+    <p>&copy; 2025 DEV | BCA Student</p>
+  </footer>
 
 </body>
 </html>
