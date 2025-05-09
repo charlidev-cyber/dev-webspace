@@ -4,21 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Deba Prakash Sahoo - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <meta name="description" content="Portfolio of Deba Prakash Sahoo – Web Developer, BCA Student, and Technology Enthusiast. Explore skills, projects, and contact info.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    /* === Global Reset === */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to right, #1f1c2c, #928dab);
-      color: #f0f0f0;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      color: #fff;
       line-height: 1.6;
-      scroll-behavior: smooth;
+      padding: 20px;
     }
 
     .container {
@@ -27,6 +31,7 @@
       padding: 20px;
     }
 
+    /* === Header === */
     header {
       text-align: center;
       padding: 60px 20px;
@@ -34,37 +39,51 @@
       backdrop-filter: blur(10px);
       border-radius: 20px;
       margin-top: 30px;
+      animation: fadeIn 1s ease-in-out;
     }
 
     header img {
-      width: 120px;
-      height: 120px;
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
-      border: 4px solid white;
+      border: 3px solid #ffd369;
       margin-bottom: 20px;
     }
 
     header h1 {
-      font-size: 2.5rem;
-      color: #fff;
+      font-size: 2.8rem;
+      background: linear-gradient(to right, #ffd369, #ffffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: typing 2.5s steps(22), blink 0.75s step-end infinite;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #ffd369;
+      display: inline-block;
     }
 
     header p {
+      margin-top: 10px;
       color: #ccc;
+      font-style: italic;
     }
 
+    /* === Sections === */
     section {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(8px);
       padding: 30px;
       border-radius: 15px;
       margin: 30px 0;
+      animation: fadeUp 0.8s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
     }
 
     section h2 {
+      font-size: 1.8rem;
       color: #ffda79;
       margin-bottom: 15px;
-      font-size: 1.8rem;
       border-bottom: 2px solid #ffda79;
       display: inline-block;
     }
@@ -90,14 +109,28 @@
 
     .card {
       background: rgba(255, 255, 255, 0.05);
-      border-radius: 10px;
+      border-radius: 12px;
       padding: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 0 25px rgba(255, 211, 105, 0.4);
+    }
+
+    .progress-bar {
+      height: 8px;
+      background: #333;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-top: 5px;
+    }
+
+    .progress {
+      height: 100%;
+      background: #ffd369;
     }
 
     footer {
@@ -105,7 +138,31 @@
       padding: 20px;
       font-size: 0.9rem;
       color: #aaa;
-      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* === Animations === */
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      } to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
     }
 
     @media (max-width: 600px) {
@@ -118,45 +175,33 @@
 <body>
   <div class="container">
     <header>
-      <img src="photo.jpg" alt="Portrait of Deba Prakash Sahoo" loading="lazy" />
+      <img src="photo.jpg" alt="Deba Photo" />
       <h1>Deba Prakash Sahoo</h1>
-      <p>Web Enthusiast | BCA Student | Passionate Coder</p>
+      <p>Web Developer | BCA Student | Passionate Coder</p>
     </header>
 
     <section>
-      <h2>About Me</h2>
-      <p>Motivated and detail-oriented BCA student with a strong foundation in programming, web development, and user interface design. Passionate about learning new technologies and building responsive, user-friendly websites. Known for adaptability, problem-solving, and working well in team environments. Eager to apply technical and creative skills in real-world projects and internships.</p>
+      <h2>Profile</h2>
+      <p>Motivated and detail-oriented BCA student with a strong foundation in programming, web development, and UI/UX. Passionate about building responsive websites. Known for adaptability, teamwork, and creativity in real-world projects.</p>
     </section>
 
     <section>
       <h2>Education</h2>
       <ul>
-        <li>
-          <strong>Higher Secondary (Science-PCB), Dr Ambedkar Memorial Residential Higher Secondary School, Jabaghat, Rourkela</strong><br/>
-          05/2023 – 05/2024<br/>
-          Completed with 75% under CHSE Board. Specialized in Physics, Chemistry, and Biology. Participated in academic activities and seminars.
-        </li>
-        <li>
-          <strong>Matriculation, Baji Rout Siksha Niketan, Rourkela</strong><br/>
-          01/2010 – 03/2022<br/>
-          Completed with 63% under CHSE Board. Participated in science exhibitions and school events. Built a strong foundation in Mathematics and Science.
-        </li>
-        <li>
-          <strong>BCA, Dr Ambedkar Memorial Institute of Technology And Management Science, Rourkela</strong><br/>
-          09/2024 – 10/2027<br/>
-          Focus on programming, web development, and data structures. Gaining hands-on experience in HTML, CSS, JavaScript, and C programming.
-        </li>
+        <li><strong>Higher Secondary (Science-PCB)</strong>, Dr Ambedkar Memorial Residential School, Rourkela — 75% (2024)</li>
+        <li><strong>Matriculation</strong>, Baji Rout Siksha Niketan, Rourkela — 63% (2022)</li>
+        <li><strong>BCA</strong>, DAMITS, Rourkela — Ongoing</li>
       </ul>
     </section>
 
     <section>
       <h2>Skills</h2>
       <div class="skills">
-        <div class="card">HTML/CSS - 2/5</div>
-        <div class="card">C Programming - 2/5</div>
-        <div class="card">Problem Solving - 3/5</div>
-        <div class="card">UI/UX Design Principles - 3/5</div>
-        <div class="card">Team Collaboration - 5/5</div>
+        <div class="card">HTML/CSS <div class="progress-bar"><div class="progress" style="width:40%"></div></div></div>
+        <div class="card">C Programming <div class="progress-bar"><div class="progress" style="width:40%"></div></div></div>
+        <div class="card">Problem Solving <div class="progress-bar"><div class="progress" style="width:60%"></div></div></div>
+        <div class="card">UI/UX Principles <div class="progress-bar"><div class="progress" style="width:60%"></div></div></div>
+        <div class="card">Team Collaboration <div class="progress-bar"><div class="progress" style="width:100%"></div></div></div>
       </div>
     </section>
 
@@ -165,8 +210,8 @@
       <div class="projects">
         <div class="card">
           <strong>Personal Website</strong><br />
-          Built and deployed a personal portfolio using HTML & CSS.<br />
-          <a href="https://charlidev-cyber.github.io/dev-webspace/" target="_blank">Visit Website</a>
+          Built and deployed portfolio site using HTML & CSS.<br />
+          <a href="https://charlidev-cyber.github.io/dev-webspace/" target="_blank">Visit Project</a>
         </div>
       </div>
     </section>
@@ -174,10 +219,10 @@
     <section>
       <h2>Languages</h2>
       <ul>
-        <li>English – Very good command</li>
+        <li>English – Very good</li>
         <li>Hindi – Highly proficient</li>
-        <li>Odia – Native speaker</li>
-        <li>Bengali – Native speaker</li>
+        <li>Odia – Native</li>
+        <li>Bengali – Native</li>
       </ul>
     </section>
 
@@ -193,23 +238,29 @@
     <section>
       <h2>Contact</h2>
       <p>Email: <a href="mailto:debaprakash09@gmail.com">debaprakash09@gmail.com</a></p>
-      <p>Phone: <a href="tel:7681886061">07681886061</a></p>
-      <p>Location: Rourkela, Odisha - 769002</p>
-    </section>
-
-    <section>
-      <h2>Personal Details</h2>
-      <ul>
-        <li>Date of Birth: 18/07/2007</li>
-        <li>Place of Birth: Rourkela</li>
-        <li>Gender: Male</li>
-        <li>Nationality: Indian</li>
-      </ul>
+      <p>Phone: <a href="tel:7681886061">7681886061</a></p>
+      <p>Location: Rourkela, Odisha</p>
     </section>
 
     <footer>
       &copy; 2025 Deba Prakash Sahoo | All rights reserved
     </footer>
   </div>
+
+  <script>
+    // Animate sections on scroll
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = 'fadeUp 0.8s ease forwards';
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
