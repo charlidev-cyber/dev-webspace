@@ -191,12 +191,21 @@
 
   <div class="container">
     <h2>Let's Connect!</h2>
-    <form action="#" method="post">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+    <form action="https://formspree.io/f/mjkwyoqo" method="POST">
+      <!-- Redirect after submission -->
+      <input type="hidden" name="_redirect" value="thankyou.html">
+  <label>Your Name</label>
+  <input type="text" name="name" required>
+
+  <label>Your Email</label>
+  <input type="email" name="email" required>
+
+  <label>Your Message</label>
+  <textarea name="message" required></textarea>
+
+  <button type="submit">Send</button>
+</form>
+
 
     <div class="socials">
       <a href="https://www.instagram.com/_toxic_dev_09/?utm_source=ig_web_button_share_sheet" target="_blank" title="Instagram">📷</a>
