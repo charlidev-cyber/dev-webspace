@@ -1,54 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Thank You</title>
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #c3ecf7, #ffffff);
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      text-align: center;
+      overflow: hidden;
     }
-    .message-box {
-      background: white;
+
+    .glass-box {
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
       padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      color: #fff;
+      animation: floatIn 1s ease-out;
     }
+
     h1 {
-      color: #1f6feb;
-      font-size: 2.5em;
+      font-size: 3em;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #00c9ff, #92fe9d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
+
     p {
       font-size: 1.2em;
-      color: #333;
-      margin-top: 10px;
+      color: #e0f7fa;
     }
+
     a {
       display: inline-block;
-      margin-top: 20px;
-      text-decoration: none;
+      margin-top: 25px;
+      padding: 12px 24px;
+      background: #00c6ff;
+      background: linear-gradient(to right, #0072ff, #00c6ff);
       color: white;
-      background-color: #1f6feb;
-      padding: 10px 20px;
-      border-radius: 8px;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: bold;
+      transition: transform 0.3s ease, background 0.3s ease;
     }
+
     a:hover {
-      background-color: #155ec0;
+      transform: translateY(-3px);
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+    }
+
+    @keyframes floatIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .glass-box {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 2.2em;
+      }
+
+      p {
+        font-size: 1em;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="message-box">
+  <div class="glass-box">
     <h1>Thank You!</h1>
-    <p>Your message has been sent successfully.</p>
-    <a href="index.html">Return to Home</a>
+    <p>Your submission has been received 🎉</p>
+    <a href="index.html">Back to Home</a>
   </div>
 </body>
 </html>
