@@ -1,105 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #f2f6fc;
-            color: #333;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | DEV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: linear-gradient(135deg, #ff6ec4, #7873f5);
+      --text-light: #fff;
+      --text-dark: #111;
+      --bg-dark: #121212;
+      --bg-light: #f5f5f5;
+    }
 
-        header {
-            background-color: #1f6feb;
-            color: white;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        nav {
-            text-align: center;
-            margin: 15px 0;
-        }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-light);
+      transition: all 0.4s ease;
+    }
 
-        nav a {
-            color: #1f6feb;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
+    body.light {
+      background: var(--bg-light);
+      color: var(--text-dark);
+    }
 
-        .container {
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10%;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-        .profile-pic {
-            width: 150px;
-            border-radius: 50%;
-            border: 4px solid #1f6feb;
-            display: block;
-            margin: 0 auto 20px auto;
-        }
+    header h1 {
+      background: var(--primary);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
 
-        h2 {
-            text-align: center;
-            color: #1f6feb;
-        }
+    nav a {
+      margin: 0 10px;
+      color: inherit;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 20px;
+      transition: background 0.3s;
+    }
 
-        p {
-            font-size: 16px;
-            line-height: 1.6;
-            text-align: justify;
-        }
+    nav a:hover {
+      background: var(--primary);
+      color: white;
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #1f6feb;
-            color: white;
-            margin-top: 40px;
-        }
-    </style>
+    .toggle-btn {
+      cursor: pointer;
+      font-size: 18px;
+      padding: 6px 12px;
+      border-radius: 20px;
+      background: var(--primary);
+      color: white;
+      border: none;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .profile {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+      margin-bottom: 60px;
+      animation: fadeIn 1.2s ease;
+    }
+
+    .profile img {
+      width: 250px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
+    .profile-info {
+      flex: 1;
+    }
+
+    .profile-info h2 {
+      font-size: 2rem;
+      background: var(--primary);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .skills {
+      margin-top: 20px;
+    }
+
+    .skill {
+      margin: 15px 0;
+    }
+
+    .skill-name {
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .skill-bar {
+      width: 100%;
+      height: 12px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+    }
+
+    .skill-fill {
+      height: 100%;
+      border-radius: 6px;
+      background: var(--primary);
+      animation: fillBar 2s ease forwards;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      opacity: 0.6;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fillBar {
+      from { width: 0; }
+      to { width: var(--width); }
+    }
+
+    @media (max-width: 700px) {
+      .profile {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .profile img {
+        width: 180px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>About DEV</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="resume.html">Resume</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="toggle-btn" onclick="toggleTheme()">☀️</button>
+  </header>
 
-<header>
-    <h1>About Me</h1>
-    <p>Student | Coder | Learner</p>
-</header>
+  <div class="container">
+    <div class="profile">
+      <img src="Dev.jpg" alt="My Photo">
+      <div class="profile-info">
+        <h2>Hi, I'm DEV 👋</h2>
+        <p>I'm a 2nd semester BCA student learning Web Development. I love combining design, code, and interactivity to build fun and useful websites. Currently focused on HTML, CSS, and JavaScript.</p>
+      </div>
+    </div>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-</nav>
+    <div class="skills">
+      <h2>My Skills</h2>
+      <div class="skill">
+        <div class="skill-name">HTML</div>
+        <div class="skill-bar"><div class="skill-fill" style="--width: 90%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">CSS</div>
+        <div class="skill-bar"><div class="skill-fill" style="--width: 80%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">JavaScript</div>
+        <div class="skill-bar"><div class="skill-fill" style="--width: 60%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Java (OOP)</div>
+        <div class="skill-bar"><div class="skill-fill" style="--width: 50%"></div></div>
+      </div>
+    </div>
+  </div>
 
-<div class="container">
-    <img src="Dev.jpg" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" alt="Profile" class="profile-pic">
-    <h2>Hi, I'm DEV!</h2>
-    <p>
-        I am a BCA 2nd Semester student, passionate about web development and programming.
-        I love learning new technologies and building simple, clean websites like this one.
-        Currently, I'm learning HTML, CSS, and JavaScript. I believe in continuous learning
-        and always look forward to improving my skills in software development.
-    </p>
-    <p>
-        Apart from coding, I enjoy playing Online Games, watching movies, and exploring new apps.
-        This page is a small project to showcase what I've learned so far.
-    </p>
-</div>
+  <footer>
+    <p>© 2025 DEV | Made with ❤️</p>
+  </footer>
 
-<footer>
-    &copy; 2025 DEV | BCA Student
-</footer>
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light');
+      const btn = document.querySelector('.toggle-btn');
+      btn.textContent = document.body.classList.contains('light') ? '🌙' : '☀️';
+    }
 
+    // Animate skill bars
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.skill-fill').forEach(bar => {
+        const width = bar.style.getPropertyValue('--width');
+        bar.style.width = width;
+      });
+    });
+  </script>
 </body>
 </html>
