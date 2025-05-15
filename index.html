@@ -66,7 +66,8 @@
     }
 
     nav a:hover {
-      background: var(--primary-gradient);
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(5px);
       color: #fff;
     }
 
@@ -89,6 +90,8 @@
       text-align: center;
       padding: 20px;
       animation: fadeIn 1.2s ease;
+      position: relative;
+      z-index: 1;
     }
 
     .hero h2 {
@@ -141,7 +144,28 @@
       text-align: center;
       padding: 20px;
       font-size: 0.9rem;
-      opacity: 0.6;
+      opacity: 0.7;
+    }
+
+    footer a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: inherit;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      color: #ff6ec4;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      top: 0;
+      left: 0;
+      background: transparent;
     }
 
     @keyframes fadeIn {
@@ -180,10 +204,10 @@
   </style>
 </head>
 <body>
+  <div id="particles-js"></div>
+
   <header>
-    <h1><p style="color: #FF4500; font-weight: bold; font-size: 1.2em;">
-    🚩 JAI SHREE SITA RAM 🚩
-  </p></h1>
+    <h1>🚩 JAI SHREE SITA RAM 🚩</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -194,10 +218,13 @@
 
   <section class="hero">
     <h2>Hello, I'm</h2>
-    <h1>DEV - A Future Coder 💻</h1>
-    <p>BCA student exploring the power of code and creativity. </p>
+    <h1><span id="typed-text"></span></h1>
+    <p>BCA student exploring the power of code and creativity.</p>
     <a href="#about-preview" class="btn-gradient">↓ View My Work</a>
   </section>
+
+  <!-- SVG Wave Divider -->
+  <svg viewBox="0 0 1440 320" style="display: block;"><path fill="#1a1a2e" fill-opacity="1" d="M0,160L80,160C160,160,320,160,480,138.7C640,117,800,75,960,90.7C1120,107,1280,181,1360,218.7L1440,256V0H0Z"></path></svg>
 
   <section id="about-preview">
     <h2>About Me</h2>
@@ -206,14 +233,58 @@
 
   <footer>
     <p>© 2025 DEV | All Rights Reserved</p>
+    <div>
+      <a href="#" target="_blank">🐦 Twitter</a>
+      <a href="#" target="_blank">💼 LinkedIn</a>
+      <a href="#" target="_blank">📸 Instagram</a>
+    </div>
   </footer>
 
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script>
+    var typed = new Typed('#typed-text', {
+      strings: ["DEV - A Future Coder 💻", "A Dreamer", "A Developer", "A Designer"],
+      typeSpeed: 60,
+      backSpeed: 30,
+      loop: true
+    });
+
     function toggleTheme() {
       document.body.classList.toggle('light');
       const btn = document.querySelector('.toggle-btn');
       btn.textContent = document.body.classList.contains('light') ? '🌙' : '☀️';
     }
+  </script>
+
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 60 },
+        "size": { "value": 3 },
+        "color": { "value": "#ffffff" },
+        "opacity": { "value": 0.3 },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#ffffff",
+          "opacity": 0.2,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 1
+        }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "grab" }
+        }
+      },
+      "retina_detect": true
+    });
   </script>
 </body>
 </html>
