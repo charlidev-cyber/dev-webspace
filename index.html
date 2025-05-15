@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>DEV | Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     :root {
       --primary-gradient: linear-gradient(135deg, #ff6ec4, #7873f5);
@@ -50,9 +51,8 @@
 
     header h1 {
       font-weight: 800;
-      background: var(--primary-gradient);
-      -webkit-background-clip: text;
-      color: transparent;
+      font-size: 1.2em;
+      color: orange;
     }
 
     nav a {
@@ -66,8 +66,7 @@
     }
 
     nav a:hover {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(5px);
+      background: var(--primary-gradient);
       color: #fff;
     }
 
@@ -90,8 +89,6 @@
       text-align: center;
       padding: 20px;
       animation: fadeIn 1.2s ease;
-      position: relative;
-      z-index: 1;
     }
 
     .hero h2 {
@@ -144,28 +141,23 @@
       text-align: center;
       padding: 20px;
       font-size: 0.9rem;
-      opacity: 0.7;
+      opacity: 0.8;
     }
 
-    footer a {
+    .socials {
+      margin-top: 10px;
+    }
+
+    .socials a {
       margin: 0 10px;
-      text-decoration: none;
+      font-size: 20px;
       color: inherit;
-      font-weight: bold;
+      transition: transform 0.3s, color 0.3s;
     }
 
-    footer a:hover {
+    .socials a:hover {
+      transform: scale(1.2);
       color: #ff6ec4;
-    }
-
-    #particles-js {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      top: 0;
-      left: 0;
-      background: transparent;
     }
 
     @keyframes fadeIn {
@@ -204,8 +196,6 @@
   </style>
 </head>
 <body>
-  <div id="particles-js"></div>
-
   <header>
     <h1>🚩 JAI SHREE SITA RAM 🚩</h1>
     <nav>
@@ -218,13 +208,10 @@
 
   <section class="hero">
     <h2>Hello, I'm</h2>
-    <h1><span id="typed-text"></span></h1>
+    <h1>DEV - A Future Coder 💻</h1>
     <p>BCA student exploring the power of code and creativity.</p>
     <a href="#about-preview" class="btn-gradient">↓ View My Work</a>
   </section>
-
-  <!-- SVG Wave Divider -->
-  <svg viewBox="0 0 1440 320" style="display: block;"><path fill="#1a1a2e" fill-opacity="1" d="M0,160L80,160C160,160,320,160,480,138.7C640,117,800,75,960,90.7C1120,107,1280,181,1360,218.7L1440,256V0H0Z"></path></svg>
 
   <section id="about-preview">
     <h2>About Me</h2>
@@ -233,70 +220,31 @@
 
   <footer>
     <p>© 2025 DEV | All Rights Reserved</p>
-     <div class="socials">
+    <div class="socials">
       <a href="https://www.instagram.com/_toxic_dev_09/?utm_source=ig_web_button_share_sheet" target="_blank" title="Instagram">
         <i class="fab fa-instagram"></i> 
       </a>
       <a href="https://charlidev-cyber.github.io/dev-webspace/" target="_blank" title="Website">
-        <i class="fab fa-globe-europe"></i> 
+        <i class="fas fa-globe"></i> 
       </a>
       <a href="https://www.snapchat.com/add/toxicdeba?share_id=53X4cK4iSss&locale=en-IN" target="_blank" title="Snapchat">
-        <i class="fab fa-snapchat"></i> 
+        <i class="fab fa-snapchat-ghost"></i> 
       </a>
       <a href="https://wa.me/917681886061" target="_blank" title="WhatsApp">
-       <i class="fab fa-whatsapp"></i>  
+        <i class="fab fa-whatsapp"></i>  
       </a>
       <a href="mailto:debaprakash09@gmail.com" title="Email">
-        <i class="fab fa-google"></i> 
+        <i class="fas fa-envelope"></i> 
       </a>
     </div>
   </footer>
 
-  <!-- Typed.js -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script>
-    var typed = new Typed('#typed-text', {
-      strings: ["DEV - A Future Coder 💻", "A Dreamer", "A Developer", "A Designer"],
-      typeSpeed: 60,
-      backSpeed: 30,
-      loop: true
-    });
-
     function toggleTheme() {
       document.body.classList.toggle('light');
       const btn = document.querySelector('.toggle-btn');
       btn.textContent = document.body.classList.contains('light') ? '🌙' : '☀️';
     }
-  </script>
-
-  <!-- Particles.js -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script>
-    particlesJS("particles-js", {
-      "particles": {
-        "number": { "value": 60 },
-        "size": { "value": 3 },
-        "color": { "value": "#ffffff" },
-        "opacity": { "value": 0.3 },
-        "line_linked": {
-          "enable": true,
-          "distance": 150,
-          "color": "#ffffff",
-          "opacity": 0.2,
-          "width": 1
-        },
-        "move": {
-          "enable": true,
-          "speed": 1
-        }
-      },
-      "interactivity": {
-        "events": {
-          "onhover": { "enable": true, "mode": "grab" }
-        }
-      },
-      "retina_detect": true
-    });
   </script>
 </body>
 </html>
