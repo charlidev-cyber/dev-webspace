@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>DEV | Home</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
     :root {
       --primary-gradient: linear-gradient(135deg, #ff6ec4, #7873f5);
       --text-light: #fff;
       --text-dark: #111;
-      --bg-dark: #1a1a2e;
+      --bg-dark: #0d0d1c;
       --bg-light: #f3f3f3;
     }
 
@@ -37,6 +37,16 @@
       color: var(--text-dark);
     }
 
+    canvas#stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background: #000;
+    }
+
     header {
       display: flex;
       justify-content: space-between;
@@ -46,7 +56,7 @@
       backdrop-filter: blur(10px);
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 10;
     }
 
     header h1 {
@@ -106,9 +116,12 @@
       animation: slideIn 1.5s ease;
     }
 
-    .hero p {
-      margin: 15px 0 30px;
-      max-width: 600px;
+    .typewriter {
+      margin-top: 15px;
+      font-size: 1.2em;
+      font-weight: 300;
+      color: #ccc;
+      min-height: 30px;
     }
 
     .btn-gradient {
@@ -121,6 +134,7 @@
       cursor: pointer;
       transition: transform 0.3s ease;
       text-decoration: none;
+      margin-top: 25px;
     }
 
     .btn-gradient:hover {
@@ -137,27 +151,28 @@
       animation: fadeInUp 1s ease;
     }
 
+    .socials {
+      margin-top: 30px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      font-size: 1.5em;
+    }
+
+    .socials a {
+      color: #ccc;
+      transition: color 0.3s;
+    }
+
+    .socials a:hover {
+      color: #fff;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
       font-size: 0.9rem;
-      opacity: 0.8;
-    }
-
-    .socials {
-      margin-top: 10px;
-    }
-
-    .socials a {
-      margin: 0 10px;
-      font-size: 20px;
-      color: inherit;
-      transition: transform 0.3s, color 0.3s;
-    }
-
-    .socials a:hover {
-      transform: scale(1.2);
-      color: #ff6ec4;
+      opacity: 0.6;
     }
 
     @keyframes fadeIn {
@@ -196,68 +211,43 @@
   </style>
 </head>
 <body>
+  <canvas id="stars"></canvas>
+
   <header>
     <h1>🚩 JAI SHREE SITA RAM 🚩</h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="#">Home</a>
+      <a href="#about-preview">About</a>
+      <a href="mailto:debaprakash09@gmail.com">Contact</a>
     </nav>
     <button class="toggle-btn" onclick="toggleTheme()">☀️</button>
   </header>
 
- <section class="hero">
-  <h2>Hello, I'm</h2>
-  <h1>DEV – A Future Coder 💻</h1>
-  <div class="typewriter">
-    <span id="animated-text"></span>
-  </div>
-  <a href="#about-preview" class="btn-gradient">↓ View My Work</a>
-</section>
-
-<style>
-  .typewriter {
-    margin-top: 15px;
-    font-size: 1.2em;
-    font-weight: 300;
-    color: #ccc;
-    min-height: 30px;
-  }
-</style>
-
-<script>
-  const texts = [
-    "Crafting ideas into code.",
-    "Building the future with creativity.",
-    "Exploring Web Development step-by-step."
-  ];
-
-  let count = 0;
-  let index = 0;
-  let currentText = "";
-  let letter = "";
-
-  function type() {
-    if (count === texts.length) {
-      count = 0;
-    }
-    currentText = texts[count];
-    letter = currentText.slice(0, ++index);
-
-    document.getElementById("animated-text").textContent = letter;
-
-    if (letter.length === currentText.length) {
-      count++;
-      index = 0;
-      setTimeout(type, 1600); // pause before next sentence
-    } else {
-      setTimeout(type, 80);
-    }
-  }
-
-  window.onload = type;
-</script>
-
+  <section class="hero">
+    <h2>Hello, I'm</h2>
+    <h1>DEV – A Future Coder 💻</h1>
+    <div class="typewriter">
+      <span id="animated-text"></span>
+    </div>
+    <a href="#about-preview" class="btn-gradient">↓ View My Work</a>
+    <div class="socials">
+      <a href="https://www.instagram.com/_toxic_dev_09/" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://charlidev-cyber.github.io/dev-webspace/" target="_blank" title="Website">
+        <i class="fas fa-globe"></i>
+      </a>
+      <a href="https://www.snapchat.com/add/toxicdeba" target="_blank" title="Snapchat">
+        <i class="fab fa-snapchat"></i>
+      </a>
+      <a href="https://wa.me/917681886061" target="_blank" title="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="mailto:debaprakash09@gmail.com" title="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+  </section>
 
   <section id="about-preview">
     <h2>About Me</h2>
@@ -266,31 +256,100 @@
 
   <footer>
     <p>© 2025 DEV | All Rights Reserved</p>
-    <div class="socials">
-      <a href="https://www.instagram.com/_toxic_dev_09/?utm_source=ig_web_button_share_sheet" target="_blank" title="Instagram">
-        <i class="fab fa-instagram"></i> 
-      </a>
-      <a href="https://charlidev-cyber.github.io/dev-webspace/" target="_blank" title="Website">
-        <i class="fas fa-globe"></i> 
-      </a>
-      <a href="https://www.snapchat.com/add/toxicdeba?share_id=53X4cK4iSss&locale=en-IN" target="_blank" title="Snapchat">
-        <i class="fab fa-snapchat-ghost"></i> 
-      </a>
-      <a href="https://wa.me/917681886061" target="_blank" title="WhatsApp">
-        <i class="fab fa-whatsapp"></i>  
-      </a>
-      <a href="mailto:debaprakash09@gmail.com" title="Email">
-        <i class="fas fa-envelope"></i> 
-      </a>
-    </div>
   </footer>
 
   <script>
+    // Theme toggle
     function toggleTheme() {
       document.body.classList.toggle('light');
       const btn = document.querySelector('.toggle-btn');
       btn.textContent = document.body.classList.contains('light') ? '🌙' : '☀️';
     }
+
+    // Typing effect
+    const texts = [
+      "Crafting ideas into code.",
+      "Building the future with creativity.",
+      "Exploring Web Development step-by-step."
+    ];
+    let count = 0;
+    let index = 0;
+    let currentText = "";
+    let letter = "";
+
+    function type() {
+      if (count === texts.length) count = 0;
+      currentText = texts[count];
+      letter = currentText.slice(0, ++index);
+
+      document.getElementById("animated-text").textContent = letter;
+
+      if (letter.length === currentText.length) {
+        count++;
+        index = 0;
+        setTimeout(type, 1600);
+      } else {
+        setTimeout(type, 80);
+      }
+    }
+
+    window.onload = type;
+
+    // Star background
+    const canvas = document.getElementById("stars");
+    const ctx = canvas.getContext("2d");
+
+    let stars = [];
+    const numStars = 100;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    function createStars() {
+      stars = [];
+      for (let i = 0; i < numStars; i++) {
+        stars.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 1.5,
+          speed: Math.random() * 0.5 + 0.1,
+        });
+      }
+    }
+
+    function drawStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "white";
+      stars.forEach((star) => {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.fill();
+      });
+    }
+
+    function moveStars() {
+      stars.forEach((star) => {
+        star.y += star.speed;
+        if (star.y > canvas.height) {
+          star.y = 0;
+          star.x = Math.random() * canvas.width;
+        }
+      });
+    }
+
+    function animateStars() {
+      drawStars();
+      moveStars();
+      requestAnimationFrame(animateStars);
+    }
+
+    createStars();
+    animateStars();
   </script>
 </body>
 </html>
