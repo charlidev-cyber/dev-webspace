@@ -206,12 +206,58 @@
     <button class="toggle-btn" onclick="toggleTheme()">☀️</button>
   </header>
 
-  <section class="hero">
-    <h2>Hello, I'm</h2>
-    <h1>DEV - A Future Coder 💻</h1>
-    <p>BCA student exploring the power of code and creativity.</p>
-    <a href="#about-preview" class="btn-gradient">↓ View My Work</a>
-  </section>
+ <section class="hero">
+  <h2>Hello, I'm</h2>
+  <h1>DEV – A Future Coder 💻</h1>
+  <div class="typewriter">
+    <span id="animated-text"></span>
+  </div>
+  <a href="#about-preview" class="btn-gradient">↓ View My Work</a>
+</section>
+
+<style>
+  .typewriter {
+    margin-top: 15px;
+    font-size: 1.2em;
+    font-weight: 300;
+    color: #ccc;
+    min-height: 30px;
+  }
+</style>
+
+<script>
+  const texts = [
+    "Crafting ideas into code.",
+    "Building the future with creativity.",
+    "Exploring Web Development step-by-step."
+  ];
+
+  let count = 0;
+  let index = 0;
+  let currentText = "";
+  let letter = "";
+
+  function type() {
+    if (count === texts.length) {
+      count = 0;
+    }
+    currentText = texts[count];
+    letter = currentText.slice(0, ++index);
+
+    document.getElementById("animated-text").textContent = letter;
+
+    if (letter.length === currentText.length) {
+      count++;
+      index = 0;
+      setTimeout(type, 1600); // pause before next sentence
+    } else {
+      setTimeout(type, 80);
+    }
+  }
+
+  window.onload = type;
+</script>
+
 
   <section id="about-preview">
     <h2>About Me</h2>
